@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minute Beep</title>
+</head>
+<body>
+
+<script>
+    function playBeep() {
+        var beep = new Audio('./beep.mp3'); // Replace 'path/to/beep.mp3' with the actual path or URL of your beep sound
+        beep.play();
+    }
+
+    function checkTimeAndBeep() {
+        var now = new Date();
+        var seconds = now.getSeconds();
+        console.log(seconds)
+
+        // Play the beep sound when the current minute is 0
+        if (seconds === 0) {
+            playBeep();
+        }
+    }
+
+    // Check the time and beep every second
+    setInterval(checkTimeAndBeep, 1000); // 1000 milliseconds = 1 second
+</script>
+
+</body>
+</html>
